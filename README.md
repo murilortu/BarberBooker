@@ -184,3 +184,42 @@ O projeto "BarberBooker" é uma plataforma online projetada para simplificar o a
 | Passo 1 | O cliente tenta fazer agendamento                                                                                       |
 | Passo 2 | Uma mensagem aparece informando que o usuário já possui agendamento naquele horário |
 | Passo 3 | O agendamento não é concluído enquanto o cliente não selecionar um horário diferente ou apagar o agendamento que ele possui naquele horário|
+
+
+
+## *RF04 - Listar agedamento dos usuários*
+#### Autor: @Danielpyreis – Daniel Reis.
+
+---
+
+### Revisor: @Liezy – Eliézer Alencar.
+
+| Item            | Descrição                                                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Caso de uso     |  RF04 - Listar agendamento dos usuários.                                                                                                                              |
+| Resumo          | Permite o usuário listar agendamentos feitos pelo mesmo.  |
+| Ator principal  |Clientes.                                                                                                                |
+| Pré-condição    | Ter feito agendamento.                                                                                                |
+| Pós-condição    | Visualizar o lista dos serviços solicitados.     |                                                                                                     
+
+#### Fluxo principal
+
+| Passos  | Descrição                                                                                                                                              |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Passo 1 | O usuário estando logado e feito o agendamento, interage com o botão "listar agendamentos".                                                                            |
+| Passo 2 | Visualiza a lista de serviços                                                                            |
+
+
+
+### Opções do usuário
+| Opção                 | Descrição                                                      |
+|-----------------------|----------------------------------------------------------------|
+| Listar agendamento   | Permite o usuário listar os agendamentos.                   |
+
+
+
+
+#### Relatório de usuário
+| Campo                    | Descrição                                                             | Formato |
+| ------------------------ | --------------------------------------------------------------------- | ------- |
+| Listagem dos serviços | Isso confirma e garante todo êxito na operação da listagem de serviços do usuário | Texto |
