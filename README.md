@@ -127,3 +127,60 @@ O projeto "BarberBooker" é uma plataforma online projetada para simplificar o a
 | Passo 1 | O cliente tenta fazer o login                                                                                       |
 | Passo 2 | Uma mensagem aparece informando que o usuário não possui cadastro |
 | Passo 3 | O cliente é redirecionado para tela de cadastro|
+
+
+## *RF03 - Agendar*
+#### Autor: @Liezy – Eliézer Alencar.
+
+---
+
+### Revisor: @Danielpyreis – Daniel reis.
+
+| Item            | Descrição                                                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Caso de uso     |  RF03 - Agendar.                                                                                                                              |
+| Resumo          | Permite o usuário fazer agendamento de serviços prestados pela barbearia.  |
+| Ator principal  | Ator utilizador da plataforma e novos usuários.                                                                                                                |
+| Pré-condição    | Estar logado na aplicação.                                                                                                |
+| Pós-condição    | Utilizar dos serviços.                                                                                                          |
+
+#### Fluxo principal
+
+| Passos  | Descrição                                                                                                                                              |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Passo 1 | O usuário estando logado seleciona o tipo de serviço;                                                                                                          |
+| Passo 2 | O usuário seleciona a data;                                                                                   |
+| Passo 3 | O usuário seleciona o horário;                                                                                            |
+| Passo 4 | O usuário pode informar observações em uma caixa de texto;                                                                                   |
+| Passo 6 | O usuário clica em "confirmar agendamento".                                                                                          |
+
+#### Campos do formulário.
+
+| Campo    | Obrigatório? | Editável? | Formato      |
+| ------------ | ----------------- | ------------ | --------------- |
+| Tipo de serviço  | Sim          | Sim       | Texto        |
+| data     | Sim          | Sim       | Texto        |
+| Horário     | Sim          | Sim       | Texto        |
+| Observação     | Não          | Sim       | Texto        |
+
+
+### Opções do usuário
+| Opção                 | Descrição                                                      |
+|-----------------------|----------------------------------------------------------------|
+| Confirmar agendamento   | Permite o usuário confirmar o agendamento no sistema com base nos dados fornecidos.                   |
+| Cancelar agendamento   | Permite o usuário cancelar o agendamento no sistema.                   |
+
+
+
+#### Relatório de usuário
+| Campo                    | Descrição                                                             | Formato |
+| ------------------------ | --------------------------------------------------------------------- | ------- |
+| Agendamento realizado com sucesso | Isso confirma e garante todo êxito na operação de agendamento do usuário | Texto |
+
+#### Fluxo alternativo
+
+| Passos    | Descrição                                                                                                      |
+| --------- | -------------------------------------------------------------------------------------------------------------- |
+| Passo 1 | O cliente tenta fazer agendamento                                                                                       |
+| Passo 2 | Uma mensagem aparece informando que o usuário já possui agendamento naquele horário |
+| Passo 3 | O agendamento não é concluído enquanto o cliente não selecionar um horário diferente ou apagar o agendamento que ele possui naquele horário|
