@@ -75,4 +75,55 @@ O projeto "BarberBooker" é uma plataforma online projetada para simplificar o a
 | Passo 2 | Uma mensagem aparece informando que usuário já tem uma conta |
 | Passo 3 | O cliente é redirecionado para tela de login|
 
+## *RF02 - Efetuar Login*
+ #### Autor: @Murilortu – Murilo Rodrigues.
 
+---
+
+### Revisor: @Carecovisk – João Victor Ribeiro Santos.
+
+| Item            | Descrição                                                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Caso de uso     |  RF02 - Login do usuário.                                                                                                                                |
+| Resumo          | Permitir que o usuário faça login no sistema, desde que o mesmo tenha cadastro. Caso o usuário não tenha cadastro, ele será redirecionado para a tela de cadastro.   |
+| Ator principal  | Ator utilizador da plataforma e novos usuários.                                                                                                                |
+| Pré-condição    | Para fazer o login é necessário ter conexão com a internet e estar na aplicação.                                                                                                |
+| Pós-condição    | Acessar o sistema.                                                                                                          |
+
+#### Fluxo principal
+
+| Passos  | Descrição                                                                                                                                              |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Passo 1 | O usuário entra no sistema;                                                                                                          |
+| Passo 2 | O usuário clica em login apresentado na tela principal;                                                                                   |
+| Passo 3 | O usuário preenche os dados e clica em login;                                                                                            |
+| Passo 4 | Caso o usuário tenha cadastro prévio, ele é direcionado à tela principal para realizar os agendamentos. Caso ele não tenha cadastro, será direcionado para a tela de cadastro;                                                                                   |
+| Passo 6 | Entra em sua conta e pode começar a gerenciar seus serviços;                                                                                            |
+
+#### Campos do formulário.
+
+| Campo    | Obrigatório? | Editável? | Formato      |
+| ------------ | ----------------- | ------------ | --------------- |
+| Usuario  | Sim          | Sim       | Texto        |
+| Senha     | Sim          | Sim       | Texto        |
+
+
+### Opções do usuário
+| Opção                 | Descrição                                                      |
+|-----------------------|----------------------------------------------------------------|
+| Fazer login   | Permite o usuário fazer login no sistema com base nos dados fornecidos.                   |
+
+
+
+#### Relatório de usuário
+| Campo                    | Descrição                                                             | Formato |
+| ------------------------ | --------------------------------------------------------------------- | ------- |
+| Conta logada com sucesso | Isso confirma e garante todo êxito na operação de login do usuário | Texto |
+
+#### Fluxo alternativo
+
+| Passos    | Descrição                                                                                                      |
+| --------- | -------------------------------------------------------------------------------------------------------------- |
+| Passo 1 | O cliente tenta fazer o login                                                                                       |
+| Passo 2 | Uma mensagem aparece informando que o usuário não possui cadastro |
+| Passo 3 | O cliente é redirecionado para tela de cadastro|
