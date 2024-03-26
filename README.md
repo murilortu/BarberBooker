@@ -14,10 +14,10 @@ O projeto "BarberBooker" é uma plataforma online projetada para simplificar o a
 ---
 
  - RF01 - Cadastar usuário. [João Victor](https://github.com/Carecovisk) Revisado por Murilo Rodrigues 
- - RF02 - Fazer login do usuário. [Murilo Rodrigues](https://github.com/murilortu) Revisado por João Victor
+ - RF02 - Fazer login do usuário. [Murilo Rodrigues](https://github.com/murilortu) Revisado por Eliézer Alencar
  - RF03 - Agendar. [Eliézer Alencar](https://github.com/Liezy) Revisado por Daniel Reis 
  - RF04 - Listar agendamentos do usuário. [Daniel Reis](https://github.com/Danielpyreis) Revisado por Eliézer Alencar
- - RF05 - Listar todos os agendamentos. [Moretti](https://github.com/MMorettiC) Revisado por Eliézer Alencar
+ - RF05 - Listar todos os agendamentos. [Moretti](https://github.com/MMorettiC) Revisado por João Victor
 
 ## *RF01 - Efetuar Cadastro*
  #### Autor: @Carecovisk – João Victor Ribeiro Santos.
@@ -223,3 +223,38 @@ O projeto "BarberBooker" é uma plataforma online projetada para simplificar o a
 | Campo                    | Descrição                                                             | Formato |
 | ------------------------ | --------------------------------------------------------------------- | ------- |
 | Listagem dos serviços | Isso confirma e garante todo êxito na operação da listagem de serviços do usuário | Texto |
+
+## *RF05 - Listar todos os agendamento*
+#### Autor: @MMorettiC– Matheus Moretti Cabral.
+
+---
+
+### Revisor: @Carecovisk – João Victor Ribeiro Santos.
+
+| Item            | Descrição                                                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Caso de uso     |  RF05 - Listar todos os agendamentos.                                                                                                                              |
+| Resumo          | Permite a listagem de todos os agendamento de todos os usuários.  |
+| Ator principal  |Administrador.                                                                                                                |
+| Pré-condição    | Ter feito login como administrador.                                                                                                |
+| Pós-condição    | Listagem geral.     |                                                                                                     
+
+#### Fluxo principal
+
+| Passos  | Descrição                                                                                                                                              |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Passo 1 | O usuário estando logado como administrado, interage com o botão "listar todos os agendamentos".                                                                            |
+| Passo 2| Visualiza todos os agendamentos dos clientes                                                                           
+
+### Opções do usuário
+| Opção                 | Descrição                                                      |
+|-----------------------|----------------------------------------------------------------|
+| Listar todos os agendamentos   | Permite o usuário listar todos os agendamentos dos clientes.                   |
+
+
+
+
+#### Relatório de usuário
+| Campo                    | Descrição                                                             | Formato |
+| ------------------------ | --------------------------------------------------------------------- | ------- |
+| Listagem geral de serviços | Isso confirma e garante todo êxito na operação com a visualização da listagem geral de serviços dos clientes| Lista|
