@@ -20,8 +20,10 @@
     <main>
         <div class="conteudo">
             <h1>BarberBooker</h1>
-            <button type="button" name="redirect" class="btn btn-dark">Agendar Horário</button>
+            <button type="button" name="redirect" class="btn btn-dark" onclick="redirecionar()">Agendar Horário</button>
         </div>
     </main>
+
+    <script src="./js/scripts.js"></script>
 </body>
 </html>
