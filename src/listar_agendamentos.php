@@ -4,6 +4,7 @@ include('conexao.php');
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,9 @@ include('conexao.php');
     }
   </style>
 </head>
+
 <body>
+  <a href="./home.php" class="nav-link">&nbsp; &lt;- Home</a>
   <div class="container">
     <h1 class="text-center">Meus Agendamentos</h1>
     <div class="row">
@@ -41,45 +44,45 @@ include('conexao.php');
 
             // Verifica se a consulta foi bem-sucedida
             if (!$resultado) {
-                echo '<tr><td colspan="4">Consulta inválida: ' . mysqli_error($conexao) . '</td></tr>';
+              echo '<tr><td colspan="4">Consulta inválida: ' . mysqli_error($conexao) . '</td></tr>';
             } else {
-                // Itera sobre os resultados e os exibe
-                while ($linha = mysqli_fetch_assoc($resultado)) {
-                    echo '<tr>';
-                    // Mapeamento dos IDs de serviço para seus nomes correspondentes
-                    $id_servico = $linha['id_servico'];
-                    $nome_servico = '';
-                    $id_agendamento = $linha['id_agendamento'];
-                    switch ($id_servico) {
-                        case 1:
-                            $nome_servico = 'Acabamento';
-                            break;
-                        case 2:
-                            $nome_servico = 'Barba';
-                            break;
-                        case 3:
-                            $nome_servico = 'Cabelo';
-                            break;
-                        case 4:
-                            $nome_servico = 'Barba e Cabelo';
-                            break;
-                        default:
-                            $nome_servico = 'Não especificado';
-                            break;
-                    }
-                    echo '<td>' . htmlspecialchars($nome_servico) . '</td>';
-                    // Formata a data para o formato brasileiro (dia/mês/ano)
-                    $data_formatada = date('d/m/Y', strtotime($linha['data_hora']));
-                    echo '<td>' . htmlspecialchars($data_formatada) . '</td>';
-                    // Formata o horário para o formato de 24 horas sem segundos
-                    $horario_formatado = date('H:i', strtotime($linha['data_hora']));
-                    echo '<td>' . htmlspecialchars($horario_formatado) . '</td>';
-                    echo '<td>' . htmlspecialchars($linha['observacoes']) . '</td>';
-                    echo '<td>' . "<a href='./delete.php?id=$id_agendamento'>Deletar</a>" . '</td>';
-                    echo '</tr>';
+              // Itera sobre os resultados e os exibe
+              while ($linha = mysqli_fetch_assoc($resultado)) {
+                echo '<tr>';
+                // Mapeamento dos IDs de serviço para seus nomes correspondentes
+                $id_servico = $linha['id_servico'];
+                $nome_servico = '';
+                $id_agendamento = $linha['id_agendamento'];
+                switch ($id_servico) {
+                  case 1:
+                    $nome_servico = 'Acabamento';
+                    break;
+                  case 2:
+                    $nome_servico = 'Barba';
+                    break;
+                  case 3:
+                    $nome_servico = 'Cabelo';
+                    break;
+                  case 4:
+                    $nome_servico = 'Barba e Cabelo';
+                    break;
+                  default:
+                    $nome_servico = 'Não especificado';
+                    break;
                 }
-                // Libera a memória
-                mysqli_free_result($resultado);
+                echo '<td>' . htmlspecialchars($nome_servico) . '</td>';
+                // Formata a data para o formato brasileiro (dia/mês/ano)
+                $data_formatada = date('d/m/Y', strtotime($linha['data_hora']));
+                echo '<td>' . htmlspecialchars($data_formatada) . '</td>';
+                // Formata o horário para o formato de 24 horas sem segundos
+                $horario_formatado = date('H:i', strtotime($linha['data_hora']));
+                echo '<td>' . htmlspecialchars($horario_formatado) . '</td>';
+                echo '<td>' . htmlspecialchars($linha['observacoes']) . '</td>';
+                echo '<td>' . "<a href='./delete.php?id=$id_agendamento'>Deletar</a>" . '</td>';
+                echo '</tr>';
+              }
+              // Libera a memória
+              mysqli_free_result($resultado);
             }
             ?>
           </tbody>
@@ -91,6 +94,7 @@ include('conexao.php');
   <!-- Adicione o Bootstrap JS (opcional, apenas se precisar de funcionalidades JavaScript do Bootstrap) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
 
 <?php
