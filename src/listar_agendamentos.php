@@ -49,6 +49,7 @@ include('conexao.php');
                     // Mapeamento dos IDs de serviço para seus nomes correspondentes
                     $id_servico = $linha['id_servico'];
                     $nome_servico = '';
+                    $id_agendamento = $linha['id_agendamento'];
                     switch ($id_servico) {
                         case 1:
                             $nome_servico = 'Acabamento';
@@ -74,6 +75,7 @@ include('conexao.php');
                     $horario_formatado = date('H:i', strtotime($linha['data_hora']));
                     echo '<td>' . htmlspecialchars($horario_formatado) . '</td>';
                     echo '<td>' . htmlspecialchars($linha['observacoes']) . '</td>';
+                    echo '<td>' . "<a href='./delete.php?id=$id_agendamento'>Deletar</a>" . '</td>';
                     echo '</tr>';
                 }
                 // Libera a memória
