@@ -12,7 +12,7 @@
     <header>
         <img src="./img/logo.svg" alt="logo BarberBooker">
         <div class="navbar-direita">
-            <a href="#" class="nav-link">Visualizar agendamentos</a>
+            <a href="./listar_agendamentos.php" class="nav-link">Visualizar agendamentos</a>
             <a href="#" class="nav-link">Sair</a>
         </div>
     </header>
