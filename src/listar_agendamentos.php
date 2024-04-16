@@ -78,6 +78,7 @@ include('conexao.php');
                 $horario_formatado = date('H:i', strtotime($linha['data_hora']));
                 echo '<td>' . htmlspecialchars($horario_formatado) . '</td>';
                 echo '<td>' . htmlspecialchars($linha['observacoes']) . '</td>';
+                echo '<td>' . "<a href='./editar.php?id=$id_agendamento'>Editar</a>" . '</td>';
                 echo '<td>' . "<a href='./delete.php?id=$id_agendamento'>Deletar</a>" . '</td>';
                 echo '</tr>';
               }
