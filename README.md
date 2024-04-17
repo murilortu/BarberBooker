@@ -9,6 +9,43 @@ O projeto "BarberBooker" é uma plataforma online projetada para simplificar o a
 
 ---
 
+# Planejamento da Iteração #1
+
+## Período
+Data de Início: 03/04/2024
+
+Data de Término: 17/04/2024
+
+## Objetivo
+O objetivo da iteração #1 é implementar as funcionalidades básicas do BarberBooker (CRUD) que são. Criar agendamnetos, Editar agendamentos, Listar os agendamentos, Deletar agendamentos
+
+## Responsabilidades
+
+### Desenvolvedores
+1. Criar agendameneto
+   - Desenvolvedor: [Eliézer Alencar Moreira](https://github.com/Liezy) e [Daniel Reis Aruda Sales](https://github.com/Danielpyreis)
+   - Revisor: Daniel Reis Aruda Sales
+
+2. Listar os agendamentos
+   - Desenvolvedor: [Matheus Moretti Cabral](https://github.com/MMorettiC)
+   - Revisor: João Victor Ribeiro Santos
+
+3. Editar agendamento
+   - Desenvolvedor: [Murilo Rodrigues Pereira](https://github.com/murilortu/BarberBooker)
+   - Revisor: Eliézer Alencar Moreira
+
+4. Deletar agendamento
+   - Desenvolvedor: [João Victor Ribeiro Santos](https://github.com/Carecovisk)
+   - Revisor: Murilo Rodrigues Pereira
+
+
+
+### Observações
+- Cada funcionalidade foi desenvolvida por um desenvolvedor específico e revisada por outro integrante da equipe, conforme indicado.
+- O desenvolvimento será foi de forma colaborativa, garantindo a qualidade e consistência do código.
+
+---
+
 ### Definindo os requisitos funcionais do projeto:
 
 ---
