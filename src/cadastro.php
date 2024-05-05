@@ -1,3 +1,7 @@
+<?php
+  $msg = $_REQUEST['msg'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -61,12 +65,13 @@
 <body>
   <div class="container">
     <h2>Cadastro</h2>
-    <form action="#" method="post">
+    <form action="./processar_cadastro.php" method="post">
       <div class="form-group">
         <input type="text" id="nome" name="nome" placeholder="Nome" required>
       </div>
       <div class="form-group">
-        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="email" id="email" name="email" placeholder="Email" required> <br>
+        <span><?php echo($msg) ?></span>
       </div>
       <div class="form-group">
         <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
