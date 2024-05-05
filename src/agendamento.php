@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-            <a href="./index.php" class="nav-link">< Voltar ao início</a>
+            <a href="./home.php" class="nav-link">< Voltar ao início</a>
         </header>
 
         <main>
