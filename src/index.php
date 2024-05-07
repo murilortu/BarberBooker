@@ -1,3 +1,10 @@
+<?php 
+
+    include __DIR__ . "/conexao.php";
+    include __DIR__ . "/validacao_login.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,21 +24,21 @@
                 <div class="card bg-dark text-white rounded-lg shorter-card ">
                     <div class="card-body">
                         <h1 class="text-center mb-4">Login</h1>
-                        <form>
+                        <form action="" method="POST">
                             <div class="form-group">
                                 <label for="email">E-mail</label>
-                                <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Digite seu e-mail">
                             </div>
                             <div class="form-group">
                                 <label for="password">Senha</label>
-                                <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
+                                <input type="password" name="senha" class="form-control" id="password" placeholder="Digite sua senha">
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <button type="submit" class="btn btn-light btn-block">Entrar</button>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn btn-light btn-block">Cadastrar</button>
+                                    <a href="./cadastro.php" class="btn btn-light btn-block">Cadastrar</a>
                                 </div>
                             </div>
                         </form>

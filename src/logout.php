@@ -6,4 +6,4 @@ if(!isset($_SESSION)){
 
 session_destroy();
 
-header ("Location: home.php");
+header ("Location: index.php");
