@@ -1,5 +1,8 @@
 <?php
-include('conexao.php');
+
+include __DIR__ . "/conexao.php";
+include __DIR__ . "/protect.php";
+
 ?>
 
 <!DOCTYPE html>
