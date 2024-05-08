@@ -1,3 +1,9 @@
+<?php 
+
+include __DIR__ . "/protect.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="light">
 <head>
@@ -12,8 +18,9 @@
     <header>
         <img src="./img/logo.svg" alt="logo BarberBooker">
         <div class="navbar-direita">
+            <a href="./cadastro.php" class="nav-link">Cadastrar</a>
             <a href="./listar_agendamentos.php" class="nav-link">Visualizar agendamentos</a>
-            <a href="#" class="nav-link">Sair</a>
+            <a href="./logout.php" class="nav-link">Sair</a>
         </div>
     </header>
 
