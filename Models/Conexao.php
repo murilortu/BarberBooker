@@ -5,7 +5,7 @@ class Conexao {
 
     private function __construct() {}
 
-    public static function getConexao() {
+    public static function getConexao() : PDO {
         if(!isset(self::$instancia)){
             $dbname = 'railway';
             $host = 'roundhouse.proxy.rlwy.net';
@@ -18,7 +18,7 @@ class Conexao {
             try {
                 self::$instancia = new PDO($dsn, $user, $senha);
             } catch (PDOException $e) {
-                echo 'Erro ao conectar com o banco de dados: '. $e->getMessage();
+                die ('Erro ao conectar com o banco de dados: '. $e->getMessage());
             }
         }
 

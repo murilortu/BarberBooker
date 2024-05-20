@@ -13,7 +13,7 @@
 <header>
         <img src="/BarberBooker/Design/img/logo.svg" alt="logo BarberBooker">
         <div class="navbar-direita">
-            <a href="agendamento/listarAgendamentos" class="nav-link">Visualizar agendamentos</a>
+            <a href="/BarberBooker/agendamento/listarAgendamentos" class="nav-link">Visualizar agendamentos</a>
             <a href="/BarberBooker/login/sair" class="nav-link">Sair</a>
         </div>
 </header>
