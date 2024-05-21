@@ -13,7 +13,7 @@
 
             <div class="corpo-agendamento">
                 <p>Selecione o tipo de serviço <span style="color:red">*</span></p>
-                <select required class="form-select border-black" aria-label="Default select example" name="select_tipo_servico" id="select_tipo_servico">
+                <select required class="form-select border-black" aria-label="Default select example" name="tipo_servico" id="select_tipo_servico">
                     <option selected>Selecione</option>
                     <?php foreach ($tiposServico as $servico): ?>
                         <option value="<?php echo $servico['id_servico']; ?>"><?php echo $servico['id_servico']; ?> - <?php echo $servico['tipo_servico']; ?></option>
