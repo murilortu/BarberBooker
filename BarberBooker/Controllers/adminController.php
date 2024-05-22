@@ -10,7 +10,6 @@ class AdminController extends Controller {
     private $agendamentoModel; // Adicione uma propriedade para o AgendamentoModel
 
     public function __construct() {
-        echo "allou";
         parent::__construct();
         $this->adminModel = new AdminModel();
         $this->agendamentoModel = new AgendamentoModel(); // Inicialize o AgendamentoModel
@@ -23,19 +22,18 @@ class AdminController extends Controller {
 
     public function index() {
 
+        $agendamentoModel = new AgendamentoModel();
+        $agendamentos = $agendamentoModel->listarTodosAgendamentos();
+        $dados = ['agendamentos' => $agendamentos];
+        $this->carregarViewNoTemplate('lista_todos_agendamentos', $dados);
+
+    }
+
+    public function listarUsuarios() {
         $users = $this->adminModel->getAllUsers();
         $this->carregarTemplate('admin_listar_agendamento', ['users' => $users]);
     }
 
 
-
-        // Agora podemos deletar o usuário
-        if ($this->adminModel->deleteUser($userId)) {
-            header('Location: /BarberBooker/admin_listar_agendamento');
-            exit;
-        } else {
-            echo "Erro ao deletar usuário.";
-        }
-    }
 }
 ?>
