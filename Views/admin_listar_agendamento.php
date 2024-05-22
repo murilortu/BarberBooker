@@ -21,7 +21,8 @@
                     <td><?php echo $user['nome']; ?></td>
                     <td><?php echo $user['email']; ?></td>
                     <td>
-                        <a href="/BarberBooker/admin/deleteUser/<?php echo $user['id_usuario']; ?>" onclick="return confirm('Tem certeza que deseja deletar este usuário?');">Deletar</a>
+                        <a href="/BarberBooker/admin/deleteUser/<?php echo $user['id_usuario']; ?>" onclick="return confirm('Tem certeza que deseja deletar este usuário?');">Deletar </a>
+                        <a href="/BarberBooker/admin/edit/<?php echo $user['id_usuario']; ?>"> Editar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
