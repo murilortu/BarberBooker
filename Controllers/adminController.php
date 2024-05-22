@@ -21,19 +21,23 @@ class AdminController extends Controller {
     }
 
     public function index() {
-
-        $agendamentoModel = new AgendamentoModel();
-        $agendamentos = $agendamentoModel->listarTodosAgendamentos();
-        $dados = ['agendamentos' => $agendamentos];
-        $this->carregarViewNoTemplate('lista_todos_agendamentos', $dados);
-
-    }
-
-    public function listarUsuarios() {
         $users = $this->adminModel->getAllUsers();
         $this->carregarTemplate('admin_listar_agendamento', ['users' => $users]);
     }
 
+    public function deleteUser($id) {
+        $userId = intval($id);
+        
+        // Antes de deletar o usuário, deleta todos os agendamentos associados a ele
+        $this->agendamentoModel->deletarAgendamentosUsuario($userId);
 
+        // Agora podemos deletar o usuário
+        if ($this->adminModel->deleteUser($userId)) {
+            header('Location: /BarberBooker/admin_listar_agendamento');
+            exit;
+        } else {
+            echo "Erro ao deletar usuário.";
+        }
+    }
 }
 ?>
