@@ -10,6 +10,7 @@ class AdminController extends Controller {
     private $agendamentoModel; // Adicione uma propriedade para o AgendamentoModel
 
     public function __construct() {
+        echo "allou";
         parent::__construct();
         $this->adminModel = new AdminModel();
         $this->agendamentoModel = new AgendamentoModel(); // Inicialize o AgendamentoModel
@@ -21,7 +22,7 @@ class AdminController extends Controller {
     }
 
     public function index() {
-
+        
         $agendamentoModel = new AgendamentoModel();
         $agendamentos = $agendamentoModel->listarTodosAgendamentos();
         $dados = ['agendamentos' => $agendamentos];
@@ -34,6 +35,13 @@ class AdminController extends Controller {
         $this->carregarTemplate('admin_listar_agendamento', ['users' => $users]);
     }
 
+    public function editar($id)
+    {
+
+        $model = new AgendamentoModel;
+        $result = $model->pegarAgendamento($id);
+        $this->carregarTemplate('editar', $result);
+    }
 
 }
 ?>
