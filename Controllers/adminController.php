@@ -21,6 +21,15 @@ class AdminController extends Controller {
     }
 
     public function index() {
+
+        $agendamentoModel = new AgendamentoModel();
+        $agendamentos = $agendamentoModel->listarTodosAgendamentos();
+        $dados = ['agendamentos' => $agendamentos];
+        $this->carregarViewNoTemplate('lista_todos_agendamentos', $dados);
+
+    }
+
+    public function listarUsuarios() {
         $users = $this->adminModel->getAllUsers();
         $this->carregarTemplate('admin_listar_agendamento', ['users' => $users]);
     }

@@ -39,6 +39,22 @@ class AgendamentoModel
         return $dados;
     }
 
+    public function listarTodosAgendamentos()
+    {
+        try {
+            $sql = "SELECT A.id_agendamento, U.nome AS usuario, S.tipo_servico AS servico, A.data_hora, A.observacoes
+                    FROM Agendamentos A
+                    JOIN Usuarios U ON A.id_usuario = U.id_usuario
+                    JOIN Servicos S ON A.id_servico = S.id_servico";
+            $stmt = $this->con->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Erro ao listar agendamentos: " . $e->getMessage();
+            return [];
+        }
+    }
+
     public function pegarAgendamento(int $id_agendamento)
     {
         $result = $this->con->query("
