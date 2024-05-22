@@ -1,0 +1,67 @@
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.navbar-direita {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-right: 1rem;
+}
+
+main {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.btn-agendar-horario {
+    width: 10rem;
+}
+
+
+.conteudo-agendamento {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-agendamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-select {
+    margin-bottom: 1rem;
+}
+.area-btn-agendar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-text-area {
+    margin-bottom: 4rem;
+}
