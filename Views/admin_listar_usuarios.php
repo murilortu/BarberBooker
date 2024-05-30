@@ -8,10 +8,10 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Ações</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col" colspan="2">Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -21,9 +21,9 @@
                     <td><?php echo $user['nome']; ?></td>
                     <td><?php echo $user['email']; ?></td>
                     <td>
-                        <a href="/BarberBooker/admin/deleteUser/<?php echo $user['id_usuario']; ?>" onclick="return confirm('Tem certeza que deseja deletar este usuário?');">Deletar </a>
-                        <a href="/BarberBooker/admin/edit/<?php echo $user['id_usuario']; ?>"> Editar</a>
+                        <a href="/BarberBooker/admin/deleteUser/<?php echo $user['id_usuario']; ?>" onclick="return confirm('Tem certeza que deseja deletar este usuário?');">Deletar</a>
                     </td>
+                    <td><a href="/BarberBooker/admin/edit/<?php echo $user['id_usuario']; ?>">Editar</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
