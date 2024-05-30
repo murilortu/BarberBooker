@@ -2,8 +2,8 @@
 
 class loginController extends Controller {
     
-    public function index() {
-        $this->carregarViewNoTemplate('login');
+    public function index($mensagem) {
+        $this->carregarViewNoTemplate('login', ['mensagem'=> $mensagem]);
     }
 
     public function autenticar() {
@@ -38,8 +38,9 @@ class loginController extends Controller {
             exit;
         } else {
             // Credenciais inválidas, exibe mensagem de erro e redireciona de volta para a tela de login
-            $_SESSION['mensagem'] = 'Usuário ou senha incorretos.';
-            header('Location: /BarberBooker/login');
+            $mensagem = 'Usuário ou senha incorretos.';
+            
+            header('Location: /BarberBooker/login/index/'. urlencode($mensagem));
             exit;
         }
     }
