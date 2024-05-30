@@ -25,6 +25,7 @@
                             <div class="form-group">
                                 <label for="password">Senha</label>
                                 <input type="password" name="senha" class="form-control" id="password" placeholder="Digite sua senha">
+                                <p><?php echo $mensagem;?></p>
                             </div>
                             <div class="row">
                                 <div class="col">
