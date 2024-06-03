@@ -11,6 +11,7 @@ class Core {
 
         if (isset($_GET['pag'])) {
             $url = $_GET['pag'];
+            $url = ($url[-1] != '/') ? $url . '/' : $url;
         }
 
         $parametros = [];
@@ -57,5 +58,6 @@ class Core {
         }
 
         call_user_func_array([$c, $metodo], $parametros);
+        
     }
 }
