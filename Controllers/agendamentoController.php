@@ -38,6 +38,7 @@ class AgendamentoController extends Controller
     public function agendar()
     {
         $this->protegerPagina(); // Verifica se o usuário está autenticado
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $idUsuario = $_SESSION['id']; // O id do usuário logado, ajustar conforme necessário
@@ -56,7 +57,6 @@ class AgendamentoController extends Controller
             $_SESSION['mensagem'] = 'Agendamento realizado com sucesso!';
 
             // Redireciona para a página inicial após 3 segundos
-
             header('Refresh: 3; URL=/BarberBooker/');
             exit;
         }

@@ -25,13 +25,18 @@ class AdminController extends Controller
     public function index()
     {
 
-        $users = $this->adminModel->getAllUsers();
-        $this->carregarTemplate('admin_listar_usuarios', ['users' => $users]);
+        $agendamentoModel = new AgendamentoModel();
+        $agendamentos = $agendamentoModel->listarTodosAgendamentos();
+        $dados = ['agendamentos' => $agendamentos];
+        $this->carregarViewNoTemplate('lista_todos_agendamentos', $dados);
     }
 
+    public function listarUsuarios() {
+        $users = $this->adminModel->getAllUsers();
+        $this->carregarTemplate('admin_listar_agendamento', ['users' => $users]);
+    }
 
-    public function deleteUser($userId)
-    {
+    public function deleteUser($userId) {
         // Agora podemos deletar o usuário
         if ($this->adminModel->deleteUser($userId)) {
             header('Location: /BarberBooker/admin');
@@ -41,5 +46,6 @@ class AdminController extends Controller
         }
 
     }
+
 }
 
