@@ -10,6 +10,7 @@ class Api
             'AgendamentoApiController::listarAgendamentos' => 'agendamentos',
             'AgendamentoApiController::getAgendamento' => 'agendamentos/{id_agendamento}',
             'AgendamentoApiController::listarServicos'=> 'servicos',
+            'UsuarioApiController::listarUsuarios'=> 'usuarios',
             'UsuarioApiController::listarAgendamentosUsuario'=> 'usuarios/{id_usuario}/agendamentos',
         ];
 
@@ -24,6 +25,7 @@ class Api
     {
         $routes = [
             'AgendamentoApiController::criarAgendamento' => 'agendamentos',
+            'UsuarioApiController::cadastrarUsuario'=> 'usuarios',
         ];
         
         self::matchAndRun($uri, $routes);
@@ -42,7 +44,8 @@ class Api
     {
         $routes = [
             'AgendamentoApiController::deletarAgendamento' => 'agendamentos/{id_agendamento}',
-            'UsuarioApiController::deletarAgendamentosUsuario' => 'usuarios/{id_usuario}/agendamentos'
+            'UsuarioApiController::deletarAgendamentosUsuario' => 'usuarios/{id_usuario}/agendamentos',
+            'UsuarioApiController::deleteUser'=> 'usuarios/{id_usuario}',
         ];
         self::matchAndRun($uri, $routes);
     }

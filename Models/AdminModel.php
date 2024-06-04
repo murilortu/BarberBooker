@@ -23,7 +23,7 @@ class AdminModel {
             $stmt->bindParam(':id_usuario', $userId, PDO::PARAM_INT);
             return $stmt->execute();
         } catch (PDOException $e) {
-            echo "Erro ao deletar usuário: " . $e->getMessage();
+            // echo "Erro ao deletar usuário: " . $e->getMessage();
             return false;
         }
     }
