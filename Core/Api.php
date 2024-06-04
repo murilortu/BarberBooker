@@ -6,25 +6,29 @@ class Api
 
     public static function GET(string $url)
     {
-        switch (1) {
-            case preg_match('#^agendamento$#i', $url):
-                $method = "index";
-                $controller = "AgendamentoApiController";
-                break;
-            case preg_match('#^agendamento/\d*$#i', $url):
-                $method = 'listar';
-                $controller = 'AgendamentoApiController';
-                $parameter = (int) explode('/', $url)[1];
-                break;
-            default:
-                HttpResponse::json_response(404, null, "Controlador não encontrado.");
-                return;
-                
+        $routes = [
+            'AgendamentoApiController::listarTodosAgendamentos' => 'agendamentos',
+            'AgendamentoApiController::getAgendamento' => 'agendamentos/{id_agendamento}'
+        ];
+
+        $match = self::matchRoute($url, $routes);
+
+        if (!$match) {
+            HttpResponse::json_response(402, message: $url);
+            return;
         }
 
-        $controllerMethod = "$controller::$method";
-        call_user_func($controllerMethod,$parameter);
+        
+        try {
+            call_user_func_array($match['method'],$match['params']);
+        } catch (\Throwable $th) {
+            HttpResponse::json_response(402, message: $th->getMessage());
+        }
     }
+
+
+
+    
 
     public static function POST(string $url)
     {
@@ -41,6 +45,25 @@ class Api
     public static function DELETE(string $url)
     {
 
+    }
+
+    static function matchRoute($uri, $routes) {
+        foreach ($routes as $method => $routePattern) {
+            // Transform the route pattern into a regular expression
+            $pattern = preg_replace('/\{[a-zA-Z0-9_]+\}/', '([a-zA-Z0-9_]+)', $routePattern);
+            $pattern = str_replace('/', '\/', $pattern);
+            $pattern = '/^' . $pattern . '$/';
+            
+            if (preg_match($pattern, $uri, $matches)) {
+                array_shift($matches); // Remove the full match from the matches
+                return [
+                    'method' => $method,
+                    'params' => $matches
+                ];
+            }
+        }
+        
+        return false; // No match found
     }
 
 
