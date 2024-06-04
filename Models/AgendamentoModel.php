@@ -52,7 +52,7 @@ class AgendamentoModel
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            echo "Erro ao listar agendamentos: " . $e->getMessage();
+            // echo "Erro ao listar agendamentos: " . $e->getMessage();
             return [];
         }
     }
@@ -92,7 +92,7 @@ class AgendamentoModel
         }
     }
 
-    public function criarAgendamento($idUsuario, $idServico, $dataHora, $observacoes)
+    public function criarAgendamento($idUsuario, $idServico, $dataHora, $observacoes, $api = false)
     {
         try {
             $sql = "INSERT INTO Agendamentos (id_usuario, id_servico, data_hora, observacoes) VALUES (:id_usuario, :id_servico, :data_hora, :observacoes)";
@@ -103,12 +103,17 @@ class AgendamentoModel
             $cmd->bindValue(':observacoes', $observacoes);
 
             if ($cmd->execute() === TRUE) {
-                echo '<div class="alert alert-success" role="alert">Agendamento realizado com sucesso!</div>';
-                header("refresh:2;url=home.php"); // Redirecionar para home.php após 2 segundos
+                if (!$api) {
+                    echo '<div class="alert alert-success" role="alert">Agendamento realizado com sucesso!</div>';
+                    header("refresh:2;url=home.php"); // Redirecionar para home.php após 2 segundos
+                }
             } else {
-                echo '<div class="alert alert-danger" role="alert">Erro ao realizar agendamento: ' . $cmd->errorInfo()[2] . '</div>';
-                header("refresh:5;url=home.php"); // Redirecionar para home.php após 5 segundos
+                if (!$api) {
+                    echo '<div class="alert alert-danger" role="alert">Erro ao realizar agendamento: ' . $cmd->errorInfo()[2] . '</div>';
+                    header("refresh:5;url=home.php"); // Redirecionar para home.php após 5 segundos
+                }
             }
+            return true;
         } catch (PDOException $e) {
             // Lidar com exceções (por exemplo, registrar o erro, exibir uma mensagem de erro, etc.)
             echo "Erro ao criar agendamento: " . $e->getMessage();

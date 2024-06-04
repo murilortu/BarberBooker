@@ -7,14 +7,15 @@ class Api
     public static function GET(string $url)
     {
         $routes = [
-            'AgendamentoApiController::listarTodosAgendamentos' => 'agendamentos',
-            'AgendamentoApiController::getAgendamento' => 'agendamentos/{id_agendamento}'
+            'AgendamentoApiController::listarAgendamentos' => 'agendamentos',
+            'AgendamentoApiController::getAgendamento' => 'agendamentos/{id_agendamento}',
+            'AgendamentoApiController::listarServicos'=> 'servicos',
         ];
 
         $match = self::matchRoute($url, $routes);
 
         if (!$match) {
-            HttpResponse::json_response(402, message: $url);
+            HttpResponse::json_response(404, message: $url);
             return;
         }
 
@@ -22,7 +23,7 @@ class Api
         try {
             call_user_func_array($match['method'],$match['params']);
         } catch (\Throwable $th) {
-            HttpResponse::json_response(402, message: $th->getMessage());
+            HttpResponse::json_response(500, message: $th->getMessage());
         }
     }
 
@@ -32,9 +33,23 @@ class Api
 
     public static function POST(string $url)
     {
-        $data = json_decode(file_get_contents('php://input'), true);
+        $routes = [
+            'AgendamentoApiController::criarAgendamento' => 'agendamentos',
+        ];
         
-        echo json_encode($data);
+        $match = self::matchRoute($url, $routes);
+
+        if (!$match) {
+            HttpResponse::json_response(404, message: $url);
+            return;
+        }
+
+        
+        try {
+            call_user_func_array($match['method'],$match['params']);
+        } catch (\Throwable $th) {
+            HttpResponse::json_response(500, message: $th->getMessage());
+        }
     }
 
     public static function PUT(string $url)
