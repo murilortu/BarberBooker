@@ -1,6 +1,6 @@
 <body>
     
-
+<link rel="stylesheet" type="text/css" href="/BarberBooker/Design/css/style.css">
     <main>
         <div class="conteudo">
             <h1>BarberBooker</h1>
