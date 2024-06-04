@@ -33,7 +33,7 @@ class AdminController extends Controller
 
     public function listarUsuarios() {
         $users = $this->adminModel->getAllUsers();
-        $this->carregarTemplate('admin_listar_agendamento', ['users' => $users]);
+        $this->carregarTemplate('admin_listar_usuarios', ['users' => $users]);
     }
 
     public function deleteUser($userId) {
@@ -45,6 +45,11 @@ class AdminController extends Controller
             echo "Erro ao deletar usuário.";
         }
 
+    }
+
+    public function viewUserAgendamentos($userId) {
+        $agendamentos = $this->adminModel->getAgendamentosByUserId($userId);
+        $this->carregarTemplate('lista_agendamentos', ['agendamentos' => $agendamentos]);
     }
 
 }
