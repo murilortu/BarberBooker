@@ -1,3 +1,4 @@
+<?php include 'theme.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,10 +9,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-   
+        .dark {
+            background-color: #333;
+            color: #fff;
+        }
+        .light {
+            background-color: #fff;
+            color: #333;
+        }
     </style>
 </head>
-<body>
+<body class="<?php echo $theme; ?>">
     <div class="wrapper">
         <!-- Sidebar -->
         <div class="sidebar minimized" id="sidebar"> <!-- Inicia minimizado -->
@@ -27,16 +35,14 @@
                         <i class="fa fa-user"></i>
                         <span class="link-text">Perfil</span>
                     </a>
-                    <a href="#" class="nav-link">
+                    <a href="config" class="nav-link">
                         <i class="fa fa-cogs"></i>
                         <span class="link-text">Configurações</span>
                     </a>
-            
-                        <a href="/BarberBooker/admin" class="nav-link">
-                            <i class="fa fa-crown"></i>
-                            <span class="link-text">Admin</span>
-                        </a>
-             
+                    <a href="/BarberBooker/admin" class="nav-link">
+                        <i class="fa fa-crown"></i>
+                        <span class="link-text">Admin</span>
+                    </a>
                     <a href="/BarberBooker/agendamento/listarAgendamentos" class="nav-link">
                         <i class="fa fa-calendar-alt"></i>
                         <span class="link-text">Visualizar agendamentos</span>
