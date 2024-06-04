@@ -1,5 +1,4 @@
 <body>
-  <a href="/BarberBooker/" class="nav-link"><- Home</a>
       <div class="container">
         <h1 class="text-center">Meus Agendamentos</h1>
         <div class="row">
