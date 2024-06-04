@@ -80,9 +80,10 @@ class AgendamentoModel
         WHERE id_agendamento = :id_agendamento";
 
         try {
+            $data_hora = $data . ' ' . $hora;
             $stmt = $this->con->prepare($query);
             $stmt->bindParam(':id_servico', $id_servico, PDO::PARAM_INT);
-            $stmt->bindParam(':data_hora', $data . ' ' . $hora, PDO::PARAM_STR);
+            $stmt->bindParam(':data_hora', $data_hora, PDO::PARAM_STR);
             $stmt->bindParam(':observacao', $observacao, PDO::PARAM_STR);
             $stmt->bindParam(':id_agendamento', $id_agendamento, PDO::PARAM_INT);
             $stmt->execute();
@@ -127,8 +128,7 @@ class AgendamentoModel
         try {
             $stmt = $this->con->prepare($query);
             $stmt->bindParam(':id_agendamento', $id_agendamento, PDO::PARAM_INT);
-            $stmt->execute();
-            return true;
+            return $stmt->execute();
         } catch (PDOException $th) {
             die("Erro ao deletar: " . $th->getMessage());
         }
