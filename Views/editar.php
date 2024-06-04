@@ -5,7 +5,7 @@ $horario = $data_hora[1];
 ?>
 
 <header>
-    <a href="./listar_agendamentos.php" class="nav-link">
+    <a href="/BarberBooker/agendamento/listarAgendamentos" class="nav-link">
         < Voltar para seus agendamentos</a>
 </header>
 

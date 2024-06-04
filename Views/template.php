@@ -23,7 +23,7 @@
                         <i class="fa fa-home"></i>
                         <span class="link-text">Home</span>
                     </a>
-                    <a href="#" class="nav-link">
+                    <a href="/BarberBooker/perfil" class="nav-link">
                         <i class="fa fa-user"></i>
                         <span class="link-text">Perfil</span>
                     </a>
@@ -32,7 +32,7 @@
                         <span class="link-text">Configurações</span>
                     </a>
             
-                        <a href="#" class="nav-link">
+                        <a href="/BarberBooker/admin" class="nav-link">
                             <i class="fa fa-crown"></i>
                             <span class="link-text">Admin</span>
                         </a>
