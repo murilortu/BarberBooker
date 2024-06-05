@@ -8,7 +8,7 @@ Data de Início: 08/05/2024
 Data de Término: 22/05/2024
 
 ### Objetivo
-O objetivo da iteração #3 e passar o projeto para o mode MVC e implementar as features direcionada para o ADM.
+O objetivo/valor da iteração #3 e passar o projeto para o mode MVC e implementar as features direcionada para o ADM.
 
 ## Execução e Responsabilidades
 
