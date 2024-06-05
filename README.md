@@ -27,108 +27,42 @@ O projeto "BarberBooker" foi criado para a matéria de Engenharia de Software do
 - Sprint 1 - [Relatório da Sprint 1](./docs/sprints/Sprint1_details.md)
 - Sprint 2 - [Relatório da Sprint 2](./docs/sprints/Sprint2_details.md)
 - Sprint 3 - [Relatório da Sprint 3](./docs/sprints/Sprint3_details.md)
+- Sprint 4 - [Relatório da Sprint 4](./docs/sprints/Sprint4_details.md)
 
 
 ## Caso de uso expandido
 
 - Caso de uso expandido - [Caso de uso](./docs/caso_de_uso_expandido.md)
 
+## User Stories
+- User Stories do sistema - [User Stories](https://trello.com/b/pr6TCKwR/user-stories)
+
 ## Requisitos funcionais do projeto
 
-## *RF01 - Efetuar Cadastro*
-Autor: @Carecovisk – João Victor Ribeiro Santos
-Revisor: @Murilortu – Murilo Rodrigues
+- **RF01**: O sistema deve permitir o cadastro de usuários com campos de nome, email e senha.
+- **RF02**: O sistema deve permitir o login de usuários com email e senha.
+- **RF03**: O sistema deve enviar emails de recuperação de senha.
+- **RF04**: O sistema deve permitir a visualização e edição de informações pessoais do usuário.
+- **RF05**: O sistema deve permitir o agendamento de serviços com data, hora e tipo de serviço.
+- **RF06**: O sistema deve permitir a visualização dos agendamentos futuros do usuário.
+- **RF07**: O sistema deve permitir o cancelamento de agendamentos.
+- **RF08**: O sistema deve permitir a alteração do tema de claro para escuro e vice-versa.
+- **RF09**: O sistema deve fornecer um dashboard administrativo com resumos de agendamentos e usuários.
+- **RF10**: O sistema deve permitir o gerenciamento de usuários, incluindo a edição e deleção.
+- **RF11**: O sistema deve permitir o cadastro de novos usuários com atribuição de permissões.
+- **RF12**: O sistema deve permitir a visualização dos agendamentos de um usuário específico.
+- **RF13**: O sistema deve permitir o gerenciamento de agendamentos, incluindo adição, edição e deleção.
+- **RF14**: O sistema deve fornecer configurações globais ajustáveis pelo administrador.
 
-### Descrição
-Usuários podem criar uma conta fornecendo informações como nome, e-mail, telefone e senha. Este cadastro possibilita acesso a funcionalidades adicionais como agendamento de horários, visualização de agendamentos e atualização de informações pessoais.
+## Requisitos não-funcionais do projeto
 
-### User Story
+- **RN01**: O sistema deve criptografar todas as senhas dos usuários.
+- **RN02**: O sistema deve ser responsivo e funcionar em dispositivos móveis.
+- **RN03**: O sistema deve ser capaz de enviar emails de forma confiável.
+- **RN04**: O sistema deve ser seguro e proteger os dados dos usuários contra acesso não autorizado.
+- **RN05**: O sistema deve ter um tempo de resposta adequado, garantindo uma boa experiência do usuário.
+- **RN06**: O sistema deve ser compatível com os principais navegadores (Chrome, Firefox, Safari, Edge).
+- **RN07**: O sistema deve ter uma interface amigável e intuitiva para facilitar o uso por parte dos usuários e administradores.
 
-### Persona 01 - Usuário Comum
-
-|     Epic     |     User Story     | Critérios de Aceitação |
-|--------------| -------------------------- | ----------------------- |
-|  Como usuário comum, desejo realizar cadastro no sistema  | Enquanto usuário comum do site, desejo poder criar uma conta através de um formulário de cadastro para utilizar as funcionalidades do sistema.  |  Para concluir o cadastro, o usuário deve fornecer um e-mail válido, uma senha forte e informações pessoais necessárias. O sistema deve validar os dados fornecidos e criar a conta do usuário no banco de dados. |
-<br/>
-
-### Protótipo
-![Tela de Cadastro](https://uploaddeimagens.com.br/images/004/780/834/full/imagem_2024-05-08_001927258.png?1715138369)
-
-
-## *RF02 - Efetuar Login*
-
- Autor: @Murilortu – Murilo Rodrigues
-Revisor: @Carecovisk – João Victor Ribeiro Santos
-### Descrição
-Usuários cadastrados podem fazer login inserindo suas credenciais (e-mail e senha), acessando assim as funcionalidades do sistema.
-
-### User Story
-
-### Persona 01 - Usuário Comum
-
-|     Epico     |     User Story     | Critérios de Aceitação |
-|--------------| -------------------------- | ----------------------- |
-|  Como usuário comum, desejo realizar autenticação no sistema  | Enquanto usuário comum do site, desejo acessar minha conta através de uma página de login para utilizar as funcionalidades do sistema.  |  Para efetuar login, o usuário deve possuir dados cadastrados no banco de dados e fornecer o e-mail e senha corretos conforme cadastrados. |
-<br/>
-
-### Protótipo
-![Tela de Login](https://uploaddeimagens.com.br/images/004/780/835/full/imagem_2024-05-08_002147775.png?1715138509)
-
-## *RF03 - Agendar*
-Autor: @Liezy – Eliézer Alencar
-Revisor: @Danielpyreis – Daniel reis
-
-### Descrição
-Usuários logados podem agendar horários disponíveis na barbearia, escolhendo data, hora e serviço desejado.
-
-### User Story
-
-### Persona 01 - Cliente da Barbearia
-
-|     Epic     |     User Story     | Critérios de Aceitação |
-|--------------| ------------------ | ----------------------- |
-|  Como cliente da barbearia, desejo agendar um horário para um corte de cabelo  | Enquanto cliente da barbearia, desejo poder agendar um horário para um corte de cabelo através do sistema online para garantir que serei atendido na hora desejada.  |  Para agendar um horário, o cliente deve acessar a plataforma online da barbearia, selecionar o serviço desejado, escolher o horário disponível, e fornecer suas informações de contato. O sistema deve confirmar o agendamento e enviar uma notificação de confirmação para o cliente. |
-<br/>
-
-### Protótipo
-![Tela de agendamento](https://uploaddeimagens.com.br/images/004/780/836/full/imagem_2024-05-08_002452029.png?1715138694)
-
-## *RF04 - Listar agedamento dos usuários*
-Autor: @Danielpyreis – Daniel Reis.
-Revisor: @Liezy – Eliézer Alencar.
-
-### Descrição
-Usuários podem visualizar uma lista dos seus próprios agendamentos previamente marcados na barbearia.
-
-### User Story
-
-### Persona 01 - Usuário Registrado
-
-|     Epic     |     User Story     | Critérios de Aceitação |
-|--------------| ------------------ | ----------------------- |
-|  Como usuário registrado, desejo visualizar meus agendamentos na barbearia  | Enquanto usuário registrado no sistema da barbearia, desejo poder visualizar uma lista dos meus agendamentos para que eu possa acompanhar minhas próximas visitas.  |  Para visualizar meus agendamentos, devo fazer login na plataforma da barbearia, acessar a seção de "Meus Agendamentos" e ver uma lista ordenada cronologicamente dos meus próximos compromissos, incluindo detalhes como data, horário, serviço agendado e status do agendamento. |
-<br/>
-
-## Protótipo
-![Listagem de agendamentos](https://uploaddeimagens.com.br/images/004/780/837/full/imagem_2024-05-08_002714385.png?1715138836)
-
-## *RF05 - Listar todos os agendamento*
-Autor: @MMorettiC– Matheus Moretti Cabral.
-Revisor: @Carecovisk – João Victor Ribeiro Santos.
-
-### Descrição
-Os administradores têm acesso à funcionalidade de listar todos os agendamentos de todos os usuários da barbearia. Essa visualização abrangente permite aos administradores acompanhar o fluxo de trabalho geral da barbearia.
-
-### User Story
-
-### Persona 02 - Administrador da Barbearia
-
-|     Epic     |     User Story     | Critérios de Aceitação |
-|--------------| ------------------ | ----------------------- |
-|  Como administrador da barbearia, desejo visualizar todos os agendamentos realizados  | Enquanto administrador da barbearia, desejo poder acessar uma lista completa de todos os agendamentos realizados através do sistema para gerenciar melhor o fluxo de clientes e os recursos da barbearia.  |  Ao acessar o sistema como administrador, devo encontrar uma seção específica para "Todos os Agendamentos", onde poderei ver uma lista detalhada de todos os agendamentos, incluindo informações como data, horário, cliente, serviço agendado e status do agendamento. O sistema deve permitir ordenação e filtragem dos agendamentos por diferentes critérios, como data ou status. |
-<br/>
-
-### Protótipo
-![Listagem de agendamentos](https://uploaddeimagens.com.br/images/004/780/838/full/imagem_2024-05-08_002910792.png?1715138953)
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=ffffff&height=120&section=footer"/>

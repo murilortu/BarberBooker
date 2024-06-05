@@ -9,7 +9,7 @@ Data de Início: 03/04/2024
 Data de Término: 17/04/2024
 
 ### Objetivo
-O objetivo da iteração #1 é implementar as funcionalidades básicas do BarberBooker (CRUD) que são. Criar agendamnetos, Editar agendamentos, Listar os agendamentos, Deletar agendamentos.
+O objetivo/valor da iteração #1 é implementar as funcionalidades básicas do BarberBooker (CRUD) que são. Criar agendamnetos, Editar agendamentos, Listar os agendamentos, Deletar agendamentos.
 
 ## Execução e Responsabilidades
 
