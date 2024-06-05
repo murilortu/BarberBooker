@@ -4,17 +4,57 @@
 class Api
 {
 
-    public static function GET(string $url)
+    public static function GET(string $uri)
     {
         $routes = [
-            'AgendamentoApiController::listarTodosAgendamentos' => 'agendamentos',
-            'AgendamentoApiController::getAgendamento' => 'agendamentos/{id_agendamento}'
+            'AgendamentoApiController::listarAgendamentos' => 'agendamentos',
+            'AgendamentoApiController::getAgendamento' => 'agendamentos/{id_agendamento}',
+            'AgendamentoApiController::listarServicos'=> 'servicos',
+            'UsuarioApiController::listarUsuarios'=> 'usuarios',
+            'UsuarioApiController::listarAgendamentosUsuario'=> 'usuarios/{id_usuario}/agendamentos',
         ];
 
-        $match = self::matchRoute($url, $routes);
+        self::matchAndRun($uri, $routes);
+    }
+
+
+
+    
+
+    public static function POST(string $uri)
+    {
+        $routes = [
+            'AgendamentoApiController::criarAgendamento' => 'agendamentos',
+            'UsuarioApiController::cadastrarUsuario'=> 'usuarios',
+        ];
+        
+        self::matchAndRun($uri, $routes);
+    }
+
+    public static function PUT(string $uri)
+    {
+        $routes = [
+            'AgendamentoApiController::atualizarAgendamento'=> 'agendamentos/{id_agendamento}',
+        ];
+
+        self::matchAndRun($uri, $routes);
+    }
+
+    public static function DELETE(string $uri)
+    {
+        $routes = [
+            'AgendamentoApiController::deletarAgendamento' => 'agendamentos/{id_agendamento}',
+            'UsuarioApiController::deletarAgendamentosUsuario' => 'usuarios/{id_usuario}/agendamentos',
+            'UsuarioApiController::deleteUser'=> 'usuarios/{id_usuario}',
+        ];
+        self::matchAndRun($uri, $routes);
+    }
+
+    static function matchAndRun($uri, $routes) {
+        $match = self::matchRoute($uri, $routes);
 
         if (!$match) {
-            HttpResponse::json_response(402, message: $url);
+            HttpResponse::json_response(404, message: "Rota não encontrada: $uri");
             return;
         }
 
@@ -22,29 +62,8 @@ class Api
         try {
             call_user_func_array($match['method'],$match['params']);
         } catch (\Throwable $th) {
-            HttpResponse::json_response(402, message: $th->getMessage());
+            HttpResponse::json_response(500, message: $th->getMessage());
         }
-    }
-
-
-
-    
-
-    public static function POST(string $url)
-    {
-        $data = json_decode(file_get_contents('php://input'), true);
-        
-        echo json_encode($data);
-    }
-
-    public static function PUT(string $url)
-    {
-        
-    }
-
-    public static function DELETE(string $url)
-    {
-
     }
 
     static function matchRoute($uri, $routes) {
