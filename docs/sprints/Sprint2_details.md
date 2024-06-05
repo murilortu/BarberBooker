@@ -9,7 +9,7 @@ Data de Início: 17/04/2024
 Data de Término: 08/05/2024
 
 ### Objetivo
-O objetivo da iteração #2  é implementar o  Login do usuário, Controle de Sessão e registrar um novo usuário.
+O objetivo/valor da iteração #2  é implementar o  Login do usuário, Controle de Sessão e registrar um novo usuário.
 
 ## Execução e Responsabilidades
 

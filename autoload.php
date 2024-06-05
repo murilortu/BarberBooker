@@ -13,5 +13,9 @@ spl_autoload_register(function ($nome_arquivo) {
 
         require 'Core/'. $nome_arquivo.'.php';
         
+    } elseif (file_exists('Controllers/Api/' .$nome_arquivo.'.php')) {
+
+        require 'Controllers/Api/'. $nome_arquivo.'.php';
+        
     }
 });

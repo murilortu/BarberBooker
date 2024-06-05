@@ -19,7 +19,7 @@ class CadastroModel {
             return true; // Cadastro bem-sucedido
         } catch (PDOException $e) {
             // Lidar com erros de exceção (por exemplo, registro de erro, mensagem de erro, etc.)
-            echo "Erro ao cadastrar usuário: " . $e->getMessage();
+            // echo "Erro ao cadastrar usuário: " . $e->getMessage();
             return false; // Falha no cadastro
         }
     }

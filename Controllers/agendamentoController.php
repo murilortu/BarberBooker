@@ -1,4 +1,3 @@
-
 <?php
 
 class AgendamentoController extends Controller
@@ -51,6 +50,7 @@ class AgendamentoController extends Controller
             $dataHora = $data . ' ' . $horario;
 
             $agendamentoModel = new AgendamentoModel();
+
             $agendamentoModel->criarAgendamento($idUsuario, $idServico, $dataHora, $observacoes);
 
             // Define a mensagem de sucesso

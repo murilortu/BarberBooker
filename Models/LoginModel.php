@@ -26,13 +26,12 @@ class LoginModel {
                 session_start();
                 $_SESSION['id'] = $usuario['id_usuario'];
                 $_SESSION['nome'] = $usuario['nome'];
+                $_SESSION['is_admin'] = $usuario['is_admin'];
                 return true; // Credenciais válidas
             } else {
-                echo "<script>alert('Usuário ou senha incorretos')</script>";
                 return false; // Credenciais inválidas
             }
         } else {
-            echo "<script>alert('Preencha todos os campos')</script>";
             return false; // Campos não preenchidos
         }
     }
