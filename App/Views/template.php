@@ -24,7 +24,7 @@
         <!-- Sidebar -->
         <div class="sidebar minimized" id="sidebar"> <!-- Inicia minimizado -->
             <div>
-                <img src="/BarberBooker/Design/img/logo.svg" alt="logo BarberBooker" class="img-fluid mb-4">
+                <img src="/BarberBooker/Design/img/logo2.png" alt="logo BarberBooker" class="img-fluid mb-4">
                 <nav class="nav flex-column">
                     <br>
                     <a href="/BarberBooker/home" class="nav-link">
