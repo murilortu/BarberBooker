@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use AgendamentoModel;
 use App\Core\Controller;
+use App\Models\AgendamentoModel;
 
 class AgendamentoController extends Controller
 {
