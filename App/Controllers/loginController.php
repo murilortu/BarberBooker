@@ -1,12 +1,20 @@
 <?php
 
-class loginController extends Controller {
-    
-    public function index($mensagem) {
-        $this->carregarViewNoTemplate('login', ['mensagem'=> $mensagem]);
+namespace App\Controllers;
+
+use App\Core\Controller;
+use App\Models\LoginModel;
+
+class loginController extends Controller
+{
+
+    public function index($mensagem)
+    {
+        $this->carregarViewNoTemplate('login', ['mensagem' => $mensagem]);
     }
 
-    public function autenticar() {
+    public function autenticar()
+    {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             // Se a requisição não for POST, redireciona para a tela de login
             header('Location: /BarberBooker/login');
@@ -39,15 +47,16 @@ class loginController extends Controller {
         } else {
             // Credenciais inválidas, exibe mensagem de erro e redireciona de volta para a tela de login
             $mensagem = 'Usuário ou senha incorretos.';
-            
-            header('Location: /BarberBooker/login/index/'. urlencode($mensagem));
+
+            header('Location: /BarberBooker/login/index/' . urlencode($mensagem));
             exit;
         }
     }
 
-    
 
-    public function sair() {
+
+    public function sair()
+    {
         session_start();
         session_destroy();
         header('Location: /BarberBooker/login');

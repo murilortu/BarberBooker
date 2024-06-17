@@ -1,6 +1,9 @@
 <?php
 
-require_once 'Conexao.php';
+namespace App\Models;
+
+use PDO;
+use PDOException;
 
 class AgendamentoModel
 {
@@ -148,4 +151,3 @@ class AgendamentoModel
         }
     }
 }
-

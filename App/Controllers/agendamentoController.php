@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Core\Controller;
+use App\Models\AgendamentoModel;
+
 class AgendamentoController extends Controller
 {
     public function index()

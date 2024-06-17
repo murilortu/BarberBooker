@@ -1,16 +1,21 @@
 <?php
 
-require_once 'Conexao.php';
+namespace App\Models;
 
-class LoginModel {
+use PDO;
+
+class LoginModel
+{
 
     private $con;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->con = Conexao::getConexao();
     }
 
-    public function verificarCredenciais($email, $senha) {
+    public function verificarCredenciais($email, $senha)
+    {
         // Verifica se o email e a senha foram passados
         if (!empty($email) && !empty($senha)) {
             // Realiza a consulta SQL utilizando placeholders
@@ -35,5 +40,4 @@ class LoginModel {
             return false; // Campos não preenchidos
         }
     }
-    
 }

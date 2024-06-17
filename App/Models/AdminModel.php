@@ -1,22 +1,29 @@
 <?php
 
-require_once 'Conexao.php';
+namespace App\Models;
 
-class AdminModel {
+use PDO;
+use PDOException;
+
+class AdminModel
+{
     private $con;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->con = Conexao::getConexao();
     }
 
-    public function getAllUsers() {
+    public function getAllUsers()
+    {
         $sql = "SELECT * FROM Usuarios";
         $stmt = $this->con->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getAgendamentosByUserId($userId) {
+    public function getAgendamentosByUserId($userId)
+    {
         $sql = "SELECT a.id_agendamento, a.data_hora, a.observacoes, s.tipo_servico
                 FROM Agendamentos a
                 JOIN Servicos s ON a.id_servico = s.id_servico
@@ -27,7 +34,8 @@ class AdminModel {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function deleteUser($userId) {
+    public function deleteUser($userId)
+    {
         try {
             $query = "DELETE FROM Usuarios WHERE id_usuario = :id_usuario";
             $stmt = $this->con->prepare($query);
@@ -39,4 +47,3 @@ class AdminModel {
         }
     }
 }
-

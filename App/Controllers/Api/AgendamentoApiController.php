@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Controllers\Api;
+
+use App\Core\HttpResponse;
+use App\Models\AgendamentoModel;
+
 class AgendamentoApiController
 {
     public static function listarAgendamentos()
@@ -78,6 +83,4 @@ class AgendamentoApiController
         else
             HttpResponse::json_response(500, $result, "Falha ao deletar agendamento");
     }
-
-
 }
