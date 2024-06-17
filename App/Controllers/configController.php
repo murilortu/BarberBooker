@@ -1,8 +1,14 @@
-<?php 
+<?php
 
-Class configController extends Controller {
-    public function index() { //padrão  www.nome.com/
-        
+namespace App\Controllers;
+
+use App\Core\Controller;
+
+class configController extends Controller
+{
+    public function index()
+    { //padrão  www.nome.com/
+
         $this->protegerPagina(); // Verifica se o usuário está autenticado
         //chamar um model
         //chamar a view
@@ -10,3 +16,4 @@ Class configController extends Controller {
         $this->carregarTemplate('configuração');
     }
 }
+

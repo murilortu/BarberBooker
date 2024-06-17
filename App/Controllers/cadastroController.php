@@ -1,13 +1,21 @@
 <?php
 
-class cadastroController extends Controller {
-    
-    public function index() {
+namespace App\Controllers;
+
+use App\Core\Controller;
+use App\Models\CadastroModel;
+
+class cadastroController extends Controller
+{
+
+    public function index()
+    {
         // Exibir o formulário de cadastro
         $this->carregarViewNoTemplate('cadastro');
     }
 
-    public function cadastrar() {
+    public function cadastrar()
+    {
         // Lógica para processar o formulário de cadastro
         // Capturar os dados do formulário
         $nome = $_POST['nome'];

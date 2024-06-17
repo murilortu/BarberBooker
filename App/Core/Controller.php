@@ -1,30 +1,36 @@
-<?php 
+<?php
 
-class Controller {
-    
+namespace App\Core;
+
+class Controller
+{
+
     public $dados;
     public $dados2;
 
-    public function __construct() {
+    public function __construct()
+    {
 
         $this->dados = array();
     }
 
-    public function carregarTemplate($nomeView, $dadosModel = array()) {
+    public function carregarTemplate($nomeView, $dadosModel = array())
+    {
 
         $this->dados = $dadosModel;
-        require 'Views/template.php';
-
+        require 'App/Views/template.php';
     }
 
-    public function carregarViewNoTemplate($nomeView, $dadosModel = array()) {
-        
+    public function carregarViewNoTemplate($nomeView, $dadosModel = array())
+    {
+
         extract($dadosModel);
-        require 'Views/'. $nomeView.'.php';
+        require 'App/Views/' . $nomeView . '.php';
     }
 
-    public function protegerPagina() {
+    public function protegerPagina()
+    {
         Auth::verificarAutenticacao();
     }
-    
 }
+

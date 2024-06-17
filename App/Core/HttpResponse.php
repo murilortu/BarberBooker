@@ -1,6 +1,8 @@
 <?php
 
-class HttpResponse 
+namespace App\Core;
+
+class HttpResponse
 {
     public static function json_response($code = 200, $data = null, $message = null)
     {

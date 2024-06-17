@@ -1,5 +1,12 @@
 <?php
 
+namespace App\Controllers\Api;
+
+use App\Core\HttpResponse;
+use App\Models\AdminModel;
+use App\Models\AgendamentoModel;
+use App\Models\CadastroModel;
+
 class UsuarioApiController
 {
     public static function cadastrarUsuario()
@@ -22,7 +29,6 @@ class UsuarioApiController
             HttpResponse::json_response(200, $result, "Cadastrado com sucesso!");
         else
             HttpResponse::json_response(500, $result, "Falha ao cadastrar usuario");
-
     }
     public static function listarUsuarios()
     {
@@ -45,7 +51,6 @@ class UsuarioApiController
             HttpResponse::json_response(200, $result, "Sucesso!");
         else
             HttpResponse::json_response(200, $result, "Sem agendamentos para esse usuario");
-
     }
 
     public static function deleteUser($id_usuario)

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class Core
 {
 
@@ -24,9 +26,9 @@ class Core
 
             if ($url[0] === "api") { //verifica se a url começa com api/
 
-                $method = $_SERVER['REQUEST_METHOD'];//Armazena metodo http que está sendo utilizado. Ex GET, POST, PUT, DELETE...
-                $apiMethod = "Api::$method";// No php, é possivél chamar métodos a partir de strings
-                $url = str_replace("api/","", $_GET['pag']);
+                $method = $_SERVER['REQUEST_METHOD']; //Armazena metodo http que está sendo utilizado. Ex GET, POST, PUT, DELETE...
+                $apiMethod = "Api::$method"; // No php, é possivél chamar métodos a partir de strings
+                $url = str_replace("api/", "", $_GET['pag']);
                 call_user_func($apiMethod, $url);
                 return;
             }
@@ -44,24 +46,21 @@ class Core
             if (count($url) > 0) {
                 $parametros = $url;
             }
-
-
-
         } else {
             $controller = 'homeController';
             $metodo = 'index';
         }
 
-        $caminho = 'Controllers/' . $controller . '.php';
+        $caminho = 'App/Controllers/' . $controller . '.php';
 
-        if (!file_exists($caminho) || !method_exists($controller, $metodo)) {
+        if (!file_exists($caminho) || !method_exists('App\\Controllers\\' . $controller, $metodo)) {
             $controller = 'homeController';
             $metodo = 'index';
-            $caminho = 'Controllers/' . $controller . '.php';
+            $caminho = 'App/Controllers/' . $controller . '.php';
         }
 
         require_once $caminho;
-
+        $controller = 'App\\Controllers\\' . $controller;
         if (!class_exists($controller)) {
             die("Controller $controller não encontrado.");
         }
@@ -73,6 +72,5 @@ class Core
         }
 
         call_user_func_array([$c, $metodo], $parametros);
-
     }
 }

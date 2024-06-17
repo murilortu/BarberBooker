@@ -1,16 +1,21 @@
 <?php
 
-require_once 'Conexao.php';
+namespace App\Models;
 
-class CadastroModel {
+use PDOException;
+
+class CadastroModel
+{
 
     private $con;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->con = Conexao::getConexao();
     }
 
-    public function cadastrarUsuario($nome, $email, $telefone, $senha) {
+    public function cadastrarUsuario($nome, $email, $telefone, $senha)
+    {
         // Lógica para inserir o usuário no banco de dados
         try {
             $sql = "INSERT INTO Usuarios (nome, email, telefone, senha) VALUES (?, ?, ?, ?)";
@@ -23,5 +28,4 @@ class CadastroModel {
             return false; // Falha no cadastro
         }
     }
-    
 }

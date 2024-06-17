@@ -1,5 +1,10 @@
 <?php
 
-require './vendor/autoload.php';
-$c = new Core();
+namespace App;
 
+require './vendor/autoload.php';
+
+
+use App\Core\Core;
+
+$c = new Core();

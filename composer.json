@@ -6,6 +6,11 @@
             "App\\": "App/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests"
+        }
+    },
     "authors": [
         {
             "name": "João Victor Ribeiro Santos",
