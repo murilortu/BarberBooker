@@ -17,7 +17,7 @@
                 <?php foreach ($agendamentos as $agendamento) : ?>
                   <tr>
                     <!-- Exibir os detalhes do agendamento -->
-                    <td><?php echo htmlspecialchars($agendamento['tipo_servico']); ?></td>
+                    <td><?php echo htmlspecialchars($agendamento['nome_servico']); ?></td>
                     <!-- Formata a data para o formato brasileiro (dia/mês/ano) -->
                     <td><?php echo htmlspecialchars(date('d/m/Y', strtotime($agendamento['data_hora']))); ?></td>
                     <!-- Formata o horário para o formato de 24 horas sem segundos -->
