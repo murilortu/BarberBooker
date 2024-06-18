@@ -27,7 +27,7 @@ class Core
             if ($url[0] === "api") { //verifica se a url começa com api/
 
                 $method = $_SERVER['REQUEST_METHOD']; //Armazena metodo http que está sendo utilizado. Ex GET, POST, PUT, DELETE...
-                $apiMethod = "Api::$method"; // No php, é possivél chamar métodos a partir de strings
+                $apiMethod = "\App\Core\Api::$method"; // No php, é possivél chamar métodos a partir de strings
                 $url = str_replace("api/", "", $_GET['pag']);
                 call_user_func($apiMethod, $url);
                 return;

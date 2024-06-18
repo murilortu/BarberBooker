@@ -7,11 +7,11 @@ class Api
     public static function GET(string $uri)
     {
         $routes = [
-            'AgendamentoApiController::listarAgendamentos' => 'agendamentos',
-            'AgendamentoApiController::getAgendamento' => 'agendamentos/{id_agendamento}',
-            'AgendamentoApiController::listarServicos' => 'servicos',
-            'UsuarioApiController::listarUsuarios' => 'usuarios',
-            'UsuarioApiController::listarAgendamentosUsuario' => 'usuarios/{id_usuario}/agendamentos',
+            '\App\Controllers\Api\AgendamentoApiController::listarAgendamentos' => 'agendamentos',
+            '\App\Controllers\Api\AgendamentoApiController::getAgendamento' => 'agendamentos/{id_agendamento}',
+            '\App\Controllers\Api\AgendamentoApiController::listarServicos' => 'servicos',
+            '\App\Controllers\Api\UsuarioApiController::listarUsuarios' => 'usuarios',
+            '\App\Controllers\Api\UsuarioApiController::listarAgendamentosUsuario' => 'usuarios/{id_usuario}/agendamentos',
         ];
 
         self::matchAndRun($uri, $routes);
@@ -24,8 +24,8 @@ class Api
     public static function POST(string $uri)
     {
         $routes = [
-            'AgendamentoApiController::criarAgendamento' => 'agendamentos',
-            'UsuarioApiController::cadastrarUsuario' => 'usuarios',
+            '\App\Controllers\Api\AgendamentoApiController::criarAgendamento' => 'agendamentos',
+            '\App\Controllers\Api\UsuarioApiController::cadastrarUsuario' => 'usuarios',
         ];
 
         self::matchAndRun($uri, $routes);
@@ -34,7 +34,7 @@ class Api
     public static function PUT(string $uri)
     {
         $routes = [
-            'AgendamentoApiController::atualizarAgendamento' => 'agendamentos/{id_agendamento}',
+            '\App\Controllers\Api\AgendamentoApiController::atualizarAgendamento' => 'agendamentos/{id_agendamento}',
         ];
 
         self::matchAndRun($uri, $routes);
@@ -43,9 +43,9 @@ class Api
     public static function DELETE(string $uri)
     {
         $routes = [
-            'AgendamentoApiController::deletarAgendamento' => 'agendamentos/{id_agendamento}',
-            'UsuarioApiController::deletarAgendamentosUsuario' => 'usuarios/{id_usuario}/agendamentos',
-            'UsuarioApiController::deleteUser' => 'usuarios/{id_usuario}',
+            '\App\Controllers\Api\AgendamentoApiController::deletarAgendamento' => 'agendamentos/{id_agendamento}',
+            '\App\Controllers\Api\UsuarioApiController::deletarAgendamentosUsuario' => 'usuarios/{id_usuario}/agendamentos',
+            '\App\Controllers\Api\UsuarioApiController::deleteUser' => 'usuarios/{id_usuario}',
         ];
         self::matchAndRun($uri, $routes);
     }
