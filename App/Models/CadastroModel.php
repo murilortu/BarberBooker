@@ -9,9 +9,9 @@ class CadastroModel
 {
     private $con;
 
-    public function __construct(PDO $con)
+    public function __construct(PDO $con = null)
     {
-        $this->con = $con;
+        $this->con = $con ?? Conexao::getConexao();
     }
 
     public function cadastrarUsuario($nome, $email, $telefone, $senha)
