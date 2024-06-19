@@ -1,1 +1,0 @@
-{"version":1,"defects":[],"times":{"AgendamentoModelTest::testCreateAgendamento":0.217,"AgendamentoModelTest::testUpdateAgendamento":0.212,"AgendamentoModelTest::testDeleteAgendamento":0.212,"AgendamentoModelTest::testListarAgendamentos":0.216,"AgendamentoModelTest::testListarTodosAgendamentos":0.212}}
