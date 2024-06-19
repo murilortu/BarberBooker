@@ -9,9 +9,9 @@ class AdminModel
 {
     private $con;
 
-    public function __construct()
+    public function __construct(PDO $connection = null)
     {
-        $this->con = Conexao::getConexao();
+        $this->con = $connection ?? Conexao::getConexao();
     }
 
     public function getAllUsers()
@@ -34,7 +34,7 @@ class AdminModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function deleteUser($userId)
+    public function deleteUser(int $userId)
     {
         try {
             $query = "DELETE FROM Usuarios WHERE id_usuario = :id_usuario";
