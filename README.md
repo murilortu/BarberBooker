@@ -28,6 +28,7 @@ O projeto "BarberBooker" foi criado para a matéria de Engenharia de Software do
 - Sprint 2 - [Relatório da Sprint 2](./docs/sprints/Sprint2_details.md)
 - Sprint 3 - [Relatório da Sprint 3](./docs/sprints/Sprint3_details.md)
 - Sprint 4 - [Relatório da Sprint 4](./docs/sprints/Sprint4_details.md)
+- Sprint 5 - [Relatório da Sprint 5](./docs/sprints/Sprint5_details.md)
 
 
 ## Caso de uso expandido
@@ -41,28 +42,26 @@ O projeto "BarberBooker" foi criado para a matéria de Engenharia de Software do
 
 - **RF01**: O sistema deve permitir o cadastro de usuários com campos de nome, email e senha.
 - **RF02**: O sistema deve permitir o login de usuários com email e senha.
-- **RF03**: O sistema deve enviar emails de recuperação de senha.
-- **RF04**: O sistema deve permitir a visualização e edição de informações pessoais do usuário.
-- **RF05**: O sistema deve permitir o agendamento de serviços com data, hora e tipo de serviço.
-- **RF06**: O sistema deve permitir a visualização dos agendamentos futuros do usuário.
-- **RF07**: O sistema deve permitir o cancelamento de agendamentos.
-- **RF08**: O sistema deve permitir a alteração do tema de claro para escuro e vice-versa.
-- **RF09**: O sistema deve fornecer um dashboard administrativo com resumos de agendamentos e usuários.
-- **RF10**: O sistema deve permitir o gerenciamento de usuários, incluindo a edição e deleção.
-- **RF11**: O sistema deve permitir o cadastro de novos usuários com atribuição de permissões.
-- **RF12**: O sistema deve permitir a visualização dos agendamentos de um usuário específico.
-- **RF13**: O sistema deve permitir o gerenciamento de agendamentos, incluindo adição, edição e deleção.
-- **RF14**: O sistema deve fornecer configurações globais ajustáveis pelo administrador.
+- **RF03**: O sistema deve permitir a visualização e edição de informações pessoais do usuário.
+- **RF06**: O sistema deve permitir o agendamento de serviços com data, hora e tipo de serviço.
+- **RF07**: O sistema deve permitir a visualização dos agendamentos futuros do usuário.
+- **RF08**: O sistema deve permitir o cancelamento de agendamentos.
+- **RF09**: O sistema deve permitir a alteração do tema de claro para escuro e vice-versa.
+- **RF10**: O sistema deve fornecer um dashboard administrativo com resumos de agendamentos e usuários.
+- **RF11**: O sistema deve permitir o gerenciamento de usuários, incluindo a edição e deleção.
+- **RF12**: O sistema deve permitir o cadastro de novos usuários com atribuição de permissões.
+- **RF13**: O sistema deve permitir a visualização dos agendamentos de um usuário específico.
+- **RF14**: O sistema deve permitir o gerenciamento de agendamentos, incluindo adição, edição e deleção.
+- **RF15**: O sistema deve fornecer configurações globais ajustáveis pelo administrador.
 
 ## Requisitos não-funcionais do projeto
 
-- **RN01**: O sistema deve criptografar todas as senhas dos usuários.
-- **RN02**: O sistema deve ser responsivo e funcionar em dispositivos móveis.
-- **RN03**: O sistema deve ser capaz de enviar emails de forma confiável.
-- **RN04**: O sistema deve ser seguro e proteger os dados dos usuários contra acesso não autorizado.
-- **RN05**: O sistema deve ter um tempo de resposta adequado, garantindo uma boa experiência do usuário.
-- **RN06**: O sistema deve ser compatível com os principais navegadores (Chrome, Firefox, Safari, Edge).
-- **RN07**: O sistema deve ter uma interface amigável e intuitiva para facilitar o uso por parte dos usuários e administradores.
+- **RN01**: O sistema deve ser responsivo e funcionar em dispositivos móveis.
+- **RN02**: O sistema deve ser capaz de enviar emails de forma confiável.
+- **RN03**: O sistema deve ser seguro e proteger os dados dos usuários contra acesso não autorizado.
+- **RN04**: O sistema deve ter um tempo de resposta adequado, garantindo uma boa experiência do usuário.
+- **RN05**: O sistema deve ser compatível com os principais navegadores (Chrome, Firefox, Safari, Edge).
+- **RN06**: O sistema deve ter uma interface amigável e intuitiva para facilitar o uso por parte dos usuários e administradores.
 
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=ffffff&height=120&section=footer"/>
