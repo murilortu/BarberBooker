@@ -1,40 +1,38 @@
-<body>
-      <div class="container">
+<?php include 'theme.php'; ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Agendamentos - BarberBooker</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="<?= $theme; ?>">
+    <div class="container mt-5">
         <h1 class="text-center">Meus Agendamentos</h1>
         <div class="row">
-          <div class="col centralizado">
-            <table class="table table-striped text-center">
-              <thead>
-                <tr>
-                  <th scope="col">Serviço</th>
-                  <th scope="col">Data</th>
-                  <th scope="col">Horário</th>
-                  <th scope="col">Observações</th>
-                  <th scope="col" colspan="2">Ações</th> <!-- Adicionando colunas para ações -->
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($agendamentos as $agendamento) : ?>
-                  <tr>
-                    <!-- Exibir os detalhes do agendamento -->
-                    <td><?php echo htmlspecialchars($agendamento['nome_servico']); ?></td>
-                    <!-- Formata a data para o formato brasileiro (dia/mês/ano) -->
-                    <td><?php echo htmlspecialchars(date('d/m/Y', strtotime($agendamento['data_hora']))); ?></td>
-                    <!-- Formata o horário para o formato de 24 horas sem segundos -->
-                    <td><?php echo htmlspecialchars(date('H:i', strtotime($agendamento['data_hora']))); ?></td>
-                    <td><?php echo htmlspecialchars($agendamento['observacoes']); ?></td>
-                    <td><a href="/BarberBooker/agendamento/editar/<?php echo htmlspecialchars($agendamento['id_agendamento']); ?>">Editar</a></td>
-                    <td><a href="/BarberBooker/agendamento/deletar/<?php echo htmlspecialchars($agendamento['id_agendamento']); ?>">Deletar</a></td>
-                  </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
-          </div>
+            <?php foreach ($agendamentos as $agendamento) : ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <h5 class="card-header"><?= htmlspecialchars($agendamento['tipo_servico']); ?></h5>
+                        <div class="card-body">
+                            <p class="card-text"><strong>Data:</strong> <?= htmlspecialchars(date('d/m/Y', strtotime($agendamento['data_hora']))); ?></p>
+                            <p class="card-text"><strong>Horário:</strong> <?= htmlspecialchars(date('H:i', strtotime($agendamento['data_hora']))); ?></p>
+                            <p class="card-text"><strong>Observações:</strong> <?= htmlspecialchars($agendamento['observacoes']); ?></p>
+                            <div class="d-flex justify-content-between">
+                                <a href="/BarberBooker/agendamento/editar/<?= htmlspecialchars($agendamento['id_agendamento']); ?>" class="btn btn-primary"><i class="fas fa-edit"></i> Editar</a>
+                                <a href="/BarberBooker/agendamento/deletar/<?= htmlspecialchars($agendamento['id_agendamento']); ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Deletar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
-      </div>
+    </div>
 
-      <!-- Adicione o Bootstrap JS (opcional, apenas se precisar de funcionalidades JavaScript do Bootstrap) -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

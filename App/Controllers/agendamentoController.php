@@ -59,10 +59,10 @@ class AgendamentoController extends Controller
             $agendamentoModel->criarAgendamento($idUsuario, $idServico, $dataHora, $observacoes);
 
             // Define a mensagem de sucesso
-            $_SESSION['mensagem'] = 'Agendamento realizado com sucesso!';
+            $_SESSION['mensagem'] = '<div class="alert alert-success" role="alert">Agendamento realizado com sucesso!</div>';
 
             // Redireciona para a página inicial após 3 segundos
-            header('Refresh: 3; URL=/BarberBooker/');
+            header('Location: URL=/BarberBooker/');
             exit;
         }
     }

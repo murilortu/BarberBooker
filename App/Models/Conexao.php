@@ -16,11 +16,11 @@ class Conexao
     public static function getConexao(): PDO
     {
         if (!isset(self::$instancia)) {
-            $dbname = 'railway';
-            $host = 'roundhouse.proxy.rlwy.net';
+            $dbname = 'barberbooker';
+            $host = 'localhost';
             $user = 'root';
-            $senha = 'rNUPSbtWFzPAFVwmsfbmLUamnRQQVZeA';
-            $port = 35172;
+            $senha = '';
+            $port = 3306;
 
             $dsn = "mysql:host=$host;port=$port;dbname=$dbname";
 

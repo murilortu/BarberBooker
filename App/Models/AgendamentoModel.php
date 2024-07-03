@@ -33,7 +33,7 @@ class AgendamentoModel
                 Agendamentos.id_servico, 
                 Agendamentos.data_hora, 
                 Agendamentos.observacoes, 
-                Servicos.tipo_servico as nome_servico 
+                Servicos.tipo_servico 
             FROM Agendamentos
             JOIN Servicos ON Agendamentos.id_servico = Servicos.id_servico
             WHERE Agendamentos.id_usuario = :id_usuario
@@ -108,7 +108,7 @@ class AgendamentoModel
 
             if ($cmd->execute() === TRUE) {
                 if (!$api) {
-                    echo '<div class="alert alert-success" role="alert">Agendamento realizado com sucesso!</div>';
+                    $_SESSION['mensagem'] = 'Agendamento realizado com sucesso!';
                     header("refresh:2;url=home.php"); // Redirecionar para home.php após 2 segundos
                 }
             } else {
