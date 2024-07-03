@@ -6,21 +6,16 @@ use App\Core\Controller;
 use App\Models\AdminModel;
 use App\Models\AgendamentoModel;
 
-// require_once 'Models/AdminModel.php';
-// require_once 'Models/AgendamentoModel.php'; // Importe o AgendamentoModel
-// require_once 'core/Controller.php';
-// require_once 'core/Auth.php';
-
 class AdminController extends Controller
 {
     private $adminModel;
-    private $agendamentoModel; // Adicione uma propriedade para o AgendamentoModel
+    private $agendamentoModel;
 
     public function __construct()
     {
         parent::__construct();
         $this->adminModel = new AdminModel();
-        $this->agendamentoModel = new AgendamentoModel(); // Inicialize o AgendamentoModel
+        $this->agendamentoModel = new AgendamentoModel();
         $this->protegerPagina();
         if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] != 1) {
             header('Location: /BarberBooker/login/');
@@ -30,11 +25,15 @@ class AdminController extends Controller
 
     public function index()
     {
+        $agendamentos = $this->agendamentoModel->listarTodosAgendamentos();
+        $users = $this->adminModel->getAllUsers();
 
-        $agendamentoModel = new AgendamentoModel();
-        $agendamentos = $agendamentoModel->listarTodosAgendamentos();
-        $dados = ['agendamentos' => $agendamentos];
-        $this->carregarViewNoTemplate('lista_todos_agendamentos', $dados);
+        $dados = [
+            'totalAgendamentos' => count($agendamentos),
+            'totalUsuarios' => count($users)
+        ];
+
+        $this->carregarTemplate('admin_index', $dados);
     }
 
     public function listarUsuarios()
@@ -45,13 +44,19 @@ class AdminController extends Controller
 
     public function deleteUser($userId)
     {
-        // Agora podemos deletar o usuário
         if ($this->adminModel->deleteUser($userId)) {
             header('Location: /BarberBooker/admin');
             exit;
         } else {
             echo "Erro ao deletar usuário.";
         }
+    }
+
+    public function ListarTodosAgendamentos() {
+        $agendamentoModel = new AgendamentoModel();
+        $agendamentos = $agendamentoModel->listarTodosAgendamentos();
+        $dados = ['agendamentos' => $agendamentos];
+        $this->carregarTemplate('lista_todos_agendamentos', $dados);
     }
 
     public function viewUserAgendamentos($userId)

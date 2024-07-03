@@ -17,5 +17,5 @@ if (isset($_POST['theme'])) {
 $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'dark';
 
 // Variável global para controlar a exibição do botão
-$showThemeButton = isset($showThemeButton) ? $showThemeButton : false;
+$showThemeButton = true; // Definir que o botão deve ser exibido nesta página
 ?>
