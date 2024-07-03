@@ -10,6 +10,8 @@
 2. [Descrição](#descrição-do-projeto)
 3. [Sprints](#sprints)
 4. [Requisitos funcionais](#requisitos-funcionais-do-projeto)
+5. [Configuração e Instalação](#configuração-e-instalação)
+6. [Apresentação Final](#apresentação-final)
 
 # BarberBooker
 #### Curso: Bacharelado em Ciência da Computação
@@ -30,6 +32,33 @@ O projeto "BarberBooker" foi criado para a matéria de Engenharia de Software do
 - Sprint 4 - [Relatório da Sprint 4](./docs/sprints/Sprint4_details.md)
 - Sprint 5 - [Relatório da Sprint 5](./docs/sprints/Sprint5_details.md)
 
+## Link do projeto
+Veja nossa versão final do projeto BarberBooker [aqui](https://liezy.github.io/barberbooker-landingpage/).
+
+## Configuração e Instalação
+
+Para configurar e instalar o projeto BarberBooker, siga estes passos:
+
+1. Clone o repositório para sua máquina local.
+
+```bash
+git clone https://github.com/seu-usuario/BarberBooker.git
+cd BarberBooker
+```
+2. Instale as dependências usando Composer.
+```bash
+composer install
+```
+
+3. Configure o ambiente de desenvolvimento conforme necessário.
+
+4. Execute o servidor local ou implante em um servidor web.
+
+5. Acesse a aplicação via navegador.
+
+## Apresentação Final
+
+Veja nossa apresentação final do projeto BarberBooker [aqui](https://link-da-sua-apresentacao-final).
 
 ## Caso de uso expandido
 
@@ -62,6 +91,5 @@ O projeto "BarberBooker" foi criado para a matéria de Engenharia de Software do
 - **RN04**: O sistema deve ter um tempo de resposta adequado, garantindo uma boa experiência do usuário.
 - **RN05**: O sistema deve ser compatível com os principais navegadores (Chrome, Firefox, Safari, Edge).
 - **RN06**: O sistema deve ter uma interface amigável e intuitiva para facilitar o uso por parte dos usuários e administradores.
-
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=ffffff&height=120&section=footer"/>
