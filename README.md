@@ -58,7 +58,7 @@ composer install
 
 ## Apresentação Final
 
-Veja nossa apresentação final do projeto BarberBooker [aqui](https://link-da-sua-apresentacao-final).
+Veja nossa apresentação final do projeto BarberBooker [aqui]([https://link-da-sua-apresentacao-final](https://prezi.com/view/exbzM12cF34DoKne34OV/)).
 
 ## Caso de uso expandido
 
